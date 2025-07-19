@@ -47,6 +47,12 @@ app.use('/api/whatsapp-messages', whatsappMessageRoutes);
 const roleAccessControlRoutes = require('./routes/role_access_control');
 app.use('/api/roles', roleAccessControlRoutes);
 
+
+
+
+app.get('/', (req, res) => {
+  res.send('THIS API IS WORKING')
+});
 // port
 const PORT = process.env.PORT || 5000;
 
