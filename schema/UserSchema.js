@@ -17,4 +17,4 @@ const UserSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-module.exports = UserSchema; // ✅ DO NOT CALL THIS AS A FUNCTION
+module.exports = UserSchema; 
