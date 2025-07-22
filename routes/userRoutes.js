@@ -21,6 +21,7 @@ const {
 const verifyToken = require('../middleware/verifyToken');
 
 // protected routes 
+router.post('/',verifyToken,createUser);
 router.get('/', verifyToken, getAllUsers);           // GET all users
 router.get('/:id', verifyToken, getUserById);        // GET single user
 router.post('/', verifyToken, createUser);           // POST create user
