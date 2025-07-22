@@ -2,48 +2,52 @@ const express = require('express');
 const dotenv = require('dotenv').config();
 const connectDB = require('./config/db');
 
-// Connect to MongoDB
+// connect to MongoDB
 connectDB();
 
-// Initialize Express app
+// initialize Express app
 const app = express();
 
-// Middleware to parse JSON
+// middleware to parse JSON
 app.use(express.json());
 
-// Auth Routes
+// auth Routes
 const authRoutes = require('./routes/authRoutes');
 app.use('/api/auth', authRoutes);
 
-// User Routes
+//role routes
+const roleRoutes = require('./routes/roleRoutes');
+app.use('/api/roles', roleRoutes);
+
+// user Routes
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/users', userRoutes);
 
-// Admin Routes
+// admin Routes
 const adminRoutes = require('./routes/adminRoutes');
 app.use('/api/admins', adminRoutes);
 
-// Dealer Routes
+// dealer Routes
 const dealerRoutes = require('./routes/dealerRoutes');
 app.use('/api/dealers', dealerRoutes);
 
-// CRE Routes
+// cre Routes
 const creRoutes = require('./routes/creRoutes');
 app.use('/api/cres', creRoutes);
 
-// Task Routes
+// task Routes
 const taskRoutes = require('./routes/taskRoutes');
 app.use('/api/tasks', taskRoutes);
 
-// Dealership Routes
-const dealershipRoutes = require('./routes/dealershipRoutes');
-app.use('/api/dealership', dealershipRoutes);
+// // dealership Routes
+// const dealershipRoutes = require('./routes/dealershipRoutes');
+// app.use('/api/dealership', dealershipRoutes);
 
-// Customer Routes
+// customer Routes
 const customerRoutes = require('./routes/customerRoutes');
 app.use('/api/customers', customerRoutes);
 
-// Call Log Routes
+// call log Routes
 const callLogRoutes = require('./routes/call_logRoutes');
 app.use('/api/calllogs', callLogRoutes);
 
