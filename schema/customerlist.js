@@ -1,0 +1,42 @@
+const mongoose = require('mongoose');
+
+const CustomerListSchema = new mongoose.Schema({
+  chassis: { type: String },
+  model: { type: String },
+  customer_name: { type: String, required: true },
+  mobile_no: { type: String, required: true },
+  dealership_code: { type: String },
+  dealer_name: { type: String },
+  branch_name: { type: String },
+  region: { type: String },
+  asm: { type: String },
+  reg_no: { type: String },
+  date_of_sale: { type: Date },
+  selling_dealer: { type: String },
+  alternative_mobile: { type: String },
+  address_city: { type: String },
+  pin_code: { type: String },
+  service_due_date: { type: Date },
+  service_due_type: { type: String },
+  last_service_date: { type: Date },
+  last_service_type: { type: String },
+  last_km_reading: { type: Number },
+  last_service_dealer: { type: String },
+  amc_expiry_date: { type: Date },
+  amc_services_availed: { type: Number },
+  atw_expiry_date: { type: Date },
+  rsa_expiry_date: { type: Date },
+  contact_media: { type: String },
+  cce_name: { type: String },
+  reminder_date: { type: Date },
+  contact_status: { type: String, enum: ['Contacted', 'Not Contacted'] },
+  other_remarks: { type: String },
+  appointment_checkbox: { type: Boolean, default: false },
+  appointment_date_time: { type: Date },
+  km_reading: { type: Number },
+  customer_voice: { type: String },
+  never_remind_checkbox: { type: Boolean, default: false },
+  leakage_day: { type: Number }
+}, { timestamps: true });
+
+module.exports = CustomerListSchema;
